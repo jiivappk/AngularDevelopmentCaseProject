@@ -1,0 +1,25 @@
+<table class="table table-bordered" style="margin-top: 15px;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userTableData">
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.status}}</td>
+      <td><button (click)="viewPost(user)">View Posts</button></td>
+    </tr>
+
+  </tbody>
+</table>
+<pagination  [boundaryLinks]="true" [totalItems]="totalUsers" [itemsPerPage]="5" (pageChanged)="pageChanged($event)"
+            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+
+</pagination>

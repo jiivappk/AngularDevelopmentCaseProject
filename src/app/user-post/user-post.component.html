@@ -1,0 +1,17 @@
+<ng-container *ngIf="user!==undefined">
+  <h1>{{user['data']['name']}}</h1>
+</ng-container>
+
+<ng-container *ngIf="userPost!==undefined">
+
+<div class="card" style="width: 18rem; height: 18rem; overflow: hidden; display: inline-block;margin:10px 10px 10px 20px" *ngFor="let post of userPost['data']">
+  <div class="card-body">
+    <h5 class="card-title">{{post['title']}}</h5>
+    <p class="card-text">{{post['body']}}</p>
+  </div>
+</div>
+
+</ng-container>
+<br>
+
+<!-- <button (click)="goBack()">Back</button> -->

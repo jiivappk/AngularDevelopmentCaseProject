@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-8" style="border: 2px solid black;">
+    <div class="clock" style="border: 2px solid black;">
+      {{date}}
+    </div>
+    <div style="margin: 10px 0 10px 5px;float: right;">
+      <form>
+        <input type="text" placeholder="Enter name to filter">
+        <button>Filter</button>
+      </form>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+  <div class="col-sm-4" style="border: 2px solid black;">
+    <h4 style="text-align: center;">Latest viewed users</h4>
+
+    <div class="card" style="width: 26rem;height: 7rem;margin-bottom: 8px; overflow: hidden;" *ngFor="let userPost of visitedTable">
+      <div class="card-body" style="padding: 5px;">
+        <div class="card-text row">
+          <div class="col-sm-9">
+            <span>{{userPost.name}}</span><br>
+            <span>{{userPost.email}}</span><br>
+            <span>{{userPost.gender}}</span>
+          </div>
+
+          <div  class="col-sm-3">
+            <button style="position:absolute; top:30%; width: 60%; padding: 2px;" (click)="viewPost(userPost)">View Post</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

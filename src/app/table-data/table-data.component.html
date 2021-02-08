@@ -19,7 +19,7 @@
 
   </tbody>
 </table>
-<pagination  [boundaryLinks]="true" [totalItems]="totalUsers" [itemsPerPage]="5" (pageChanged)="pageChanged($event)"
-            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+<pagination  [boundaryLinks]="true" [totalItems]="totalUsers" [itemsPerPage]="20" (pageChanged)="pageChanged($event)"
+              [maxSize]=10 previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
 
 </pagination>

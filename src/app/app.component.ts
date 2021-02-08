@@ -42,6 +42,9 @@ export class AppComponent implements OnInit{
     this.store.dispatch(increment({user}));
   }
 
+  nameFilter(name:any){
+    console.log("Name filter method is called",name.value);
+  }
   currentTime() {
     var date = new Date(); /* creating object of Date class */
     this.hour = this.updateTime(date.getHours());

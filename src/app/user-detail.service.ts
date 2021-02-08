@@ -13,6 +13,10 @@ export class UserDetailService {
     return this._http.get(this.userPath);
   }
 
+  getUsersByPage(pgno:any){
+    return this._http.get(`https://gorest.co.in/public-api/users?page=${pgno}`)
+  }
+
   getUserById(id:any){
     return this._http.get( `https://gorest.co.in/public-api/users/${id}`);
   }

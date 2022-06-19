@@ -12,4 +12,6 @@ export class DemoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  title: string = 'Title 1'
+
 }

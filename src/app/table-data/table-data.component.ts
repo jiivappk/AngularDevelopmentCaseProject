@@ -24,8 +24,15 @@ export class TableDataComponent implements OnInit {
   totalUsers:number=0;
   userTableData:any;
   startItem:number=0;
-  endItem:number=5;
+  endItem:number=19;
+  maxSize:number=0;
   pageChanged(event:any){
+  console.log("Page change even is called",event);
+  this.userDetail.getUsersByPage(event.page).subscribe((users)=>{
+    console.log("USers from pagechange event",users);
+    this.users=users;
+    this.userTableData=this.users['data'];
+  })
   this.startItem = (event.page-1) * event.itemsPerPage;
   this.endItem = (event.page) * event.itemsPerPage;
   this.userTableData=this.users['data'].slice(this.startItem,this.endItem);
@@ -39,8 +46,12 @@ export class TableDataComponent implements OnInit {
   ngOnInit(){
      this.userDetail.getUsers().subscribe(users=>{
        this.users=users;
-       this.totalUsers=this.users['data'].length;
-       this.userTableData=this.users['data'].slice(0,5);
+       console.log("Users from server",users);
+      //  this.totalUsers=this.users['data'].length;
+      this.totalUsers= this.users['meta']['pagination']['total'];
+      this.maxSize = this.users['meta']['pagination']['total'];
+      console.log("maxSize",this.maxSize);
+      this.userTableData=this.users['data'];
      });
   }
 

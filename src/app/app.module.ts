@@ -15,12 +15,14 @@ import { UserPostComponent } from './user-post/user-post.component';
 import { counterReducer } from './counter.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableDataComponent,
     UserPostComponent,
+    DemoComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,6 @@ export class DemoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  title: string = 'Title 1'
+  title: string = 'Title feature'
 
 }
